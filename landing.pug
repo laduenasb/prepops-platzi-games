@@ -3,6 +3,13 @@
 -var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
 -var text_span = "Proin sed urna quis orci interdum rutrum. Integer rhoncus finibus nunc, ac porttitor ex dapibus ac."
 -var usuario = "David"
+mixin caja(imagen, titulo, contenido)
+	.caja
+		.caja__imagen: img(src="./images/"+imagen)
+		.caja__contenido
+			h3= titulo
+			p= contenido
+			a.buton Leer mas
 doctype html
 html
 	head 
@@ -22,6 +29,10 @@ html
 					| #{parrafo}
 					span #{text_span}
 				a.boton Leer Mas
-		ul 
-			each titulox in titulos
-				li #{titulox}
+		//- ul 
+		//- 	each titulox in titulos
+		//- 		li #{titulox}
+		main.contenido 
+			+caja("imagen.png",titulos[1],"Lorem ipsum sit amet")
+			+caja("imagen.png",titulos[2],"Lorem ipsum sit amet")
+			+caja("imagen.png",titulos[3],"Lorem ipsum sit amet")
