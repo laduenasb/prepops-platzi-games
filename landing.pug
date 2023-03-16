@@ -2,6 +2,7 @@
 -var parrafo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt commodi laborum saepe voluptate incidunt maiores veniam dignissimos magnam odit officiis deserunt architecto, velit quia dolorem nulla non praesentium adipisci."
 -var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
 -var text_span = "Proin sed urna quis orci interdum rutrum. Integer rhoncus finibus nunc, ac porttitor ex dapibus ac."
+-var usuario = "David"
 doctype html
 html
 	head 
@@ -9,7 +10,10 @@ html
 		link(rel="stylesheet", href="css/ejercicio-pug.css")
 	body 
 		header PlatziGames 
-			a.boton Registro
+			if usuario 
+				a.boton Hola #{usuario}
+			else
+				a.boton Registro
 		section.intro
 			.intro__imagen: img(src="images/imagen.png")
 			.intro__contenido
@@ -18,3 +22,6 @@ html
 					| #{parrafo}
 					span #{text_span}
 				a.boton Leer Mas
+		ul 
+			each titulox in titulos
+				li #{titulox}
