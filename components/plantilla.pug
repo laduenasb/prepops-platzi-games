@@ -1,21 +1,8 @@
--var titulo = "Sub-Titulo Principal"
--var parrafo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt commodi laborum saepe voluptate incidunt maiores veniam dignissimos magnam odit officiis deserunt architecto, velit quia dolorem nulla non praesentium adipisci."
--var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
--var text_span = "Proin sed urna quis orci interdum rutrum. Integer rhoncus finibus nunc, ac porttitor ex dapibus ac."
--var usuario = "David"
-mixin caja(imagen, titulo, contenido)
-	.caja
-		.caja__imagen: img(src="./images/"+imagen)
-		.caja__contenido
-			h3= titulo
-			p= contenido
+include configuraciones.pug
 doctype html
 html
 	include head.pug
-	body 
-		header PlatziGames 
-			if usuario 
-				a.boton Hola #{usuario}
-			else
-				a.boton Registro
+	body
+		include header.pug
 		block codigo_debajo
+		include footer.pug
